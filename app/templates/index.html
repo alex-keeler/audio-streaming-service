@@ -41,7 +41,7 @@
 	</head>
 	<body>
 	   	<audio id="audio" preload="metadata">
-	        <source src="{{ url_for('audio', track=0) }}" type="audio/x-wav">
+	        <!-- <source src="{{ url_for('audio', track=0) }}" type="audio/x-wav"> -->
 	        Your browser does not support the audio element.
 	    </audio>
 	    <div class="audio-player-container">
@@ -75,6 +75,7 @@
 	$(document).ready(function() {
 		audio.pause();
 		var playing = false;
+		changeToTrack(track, false);
 
 		if (audio.readyState > 0) {
 			displayDuration();
@@ -136,13 +137,22 @@
 	});
 
 	const changeToTrack = (track, autoplay) => {
-		audio.src = "/audio?track=" + track;
-		if (autoplay) {
-			audio.play();
-			$("#play-button").find("i").attr("class", "fas fa-pause fa-2x");
-		} else {
-			$("#play-button").find("i").attr("class", "fas fa-play fa-2x");
-		}
+		$.ajax({
+			url: "/audio-source?track=" + track,
+			success: function(result) {
+				console.log(result);
+				audio.src = result;
+				if (autoplay) {
+					audio.play();
+					$("#play-button").find("i").attr("class", "fas fa-pause fa-2x");
+				} else {
+					$("#play-button").find("i").attr("class", "fas fa-play fa-2x");
+				}
+			},
+			error: function(result) {
+				console.error(result);
+			}
+		});
 	}
 
 	$("#play-button").click(function() {

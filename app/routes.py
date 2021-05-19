@@ -1,6 +1,7 @@
 from app import app
 from flask import Flask, render_template, redirect, url_for, flash, session, Response, request
 import PyWave
+from app.s3storage import create_presigned_url
 
 SAMPLES = 65536
 RATE = 44100
@@ -13,6 +14,7 @@ LENGTH = 15
 def index():
 	return render_template("index.html")
 
+# DEPRECATED
 def genHeader(sample_rate, bits_per_sample, channels, samples):
 	#datasize = samples * channels * bitsPerSample // 8
 	#filesize = sampleRate * channels * bitsPerSample // 8 * length
@@ -35,6 +37,7 @@ def genHeader(sample_rate, bits_per_sample, channels, samples):
 
 wav_header = genHeader(RATE, BITS_PER_SAMPLE, CHANNELS, SAMPLES)
 
+# DEPRECATED
 @app.route("/audio")
 def audio():
 	track_index = request.args.get('track')
@@ -96,3 +99,26 @@ def audio():
 	response.headers['Content-Length'] = str(end - start)
 
 	return response
+
+@app.route("/audio-source")
+def get_audio_source():
+	track_index = request.args.get('track')
+	if not track_index:
+		track_index = 0
+	else:
+		track_index = int(track_index)
+
+	audio_path_lookup = [
+		"Polygondwanaland-MP3/1-crumbling-castle.mp3",
+		"Polygondwanaland-MP3/2-polygondwanaland.mp3",
+		"Polygondwanaland-MP3/3-the-castle-in-the-air.mp3",
+		"Polygondwanaland-MP3/4-deserted-dunes-welcome-weary-feet.mp3",
+		"Polygondwanaland-MP3/5-inner-cell.mp3",
+		"Polygondwanaland-MP3/6-loyalty.mp3",
+		"Polygondwanaland-MP3/7-horology.mp3",
+		"Polygondwanaland-MP3/8-tetrachromacy.mp3",
+		"Polygondwanaland-MP3/9-searching.mp3",
+		"Polygondwanaland-MP3/10-the-fourth-color.mp3"
+	]
+
+	return create_presigned_url('audio-test-1468', audio_path_lookup[track_index])
