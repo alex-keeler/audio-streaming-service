@@ -1,0 +1,146 @@
+﻿<project version="2.9" name="UI Mockup" ID="9AB90E6A-AB87-4F3F-A9EC-B16AD94152C7">
+  <params>
+    <pageParam version="5.3" minAllowVersion="5.3"/>
+    <projectParam version="2.9" minAllowVersion="2.9" platform="MtWeb" pageSize="(1388,1768)" backgroundColor="4294765715" fontSize="14" fontFamily="Arial" projectType="ptPersonalProject" isShowTitleIndex="True"/>
+    <previewParam version="1.0"/>
+    <colorParam version="1.0"/>
+  </params>
+  <pages>
+    <page name="Home" ID="8362335E-89B3-4FFA-965A-4663AED09055" expanded="True" code="88sxemVYdZ" thumbCode="88sxemVYdZ" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+        <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+      </images>
+    </page>
+    <page name="User's Content" ID="89CAF04B-1524-4FE3-BEB0-98EBEFAA846C" expanded="True" code="aZ5UN2Dvum" thumbCode="aZ5UN2Dvum" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+        <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+      </images>
+      <page name="User's Favorite Songs" ID="CFC4D028-B567-4D3B-A4F7-D2DF2F480AD7" expanded="True" code="p9mu3wuSqL" thumbCode="p9mu3wuSqL" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+          <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+        </images>
+      </page>
+      <page name="User's Playlists" ID="41958AF9-1B96-4A10-A325-89D6C158C1AD" expanded="True" code="1sRoh9yKxv" thumbCode="1sRoh9yKxv" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+          <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+        </images>
+        <page name="Create Playlist" ID="4300D863-6E28-486C-B2FB-0FA77F9B0A4A" expanded="True" code="TOfNDHRgpt" thumbCode="TOfNDHRgpt" status="psWhite" isfolder="False" isshownode="True">
+          <images>
+            <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+            <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+          </images>
+        </page>
+      </page>
+    </page>
+    <page name="Artist's Content" ID="547B8072-7F0B-4800-B8CD-22DD3375BA4D" expanded="True" code="e4cijUZThd" thumbCode="e4cijUZThd" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+        <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+      </images>
+      <page name="Artist's Songs" ID="49143D43-9EBE-4958-94C9-9A01151A4AA5" expanded="True" code="ToSvbNSIkg" thumbCode="ToSvbNSIkg" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+          <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+        </images>
+      </page>
+      <page name="Artist's Albums" ID="753D135E-0433-454B-BB73-E8659B0BBA13" expanded="True" code="vBbiXNeUrU" thumbCode="vBbiXNeUrU" status="psWhite" isfolder="False" isshownode="True">
+        <images>
+          <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+          <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+        </images>
+      </page>
+    </page>
+    <page name="File Upload Pop Up" ID="948B91D7-B909-4236-AFC1-F38A1D9070C4" expanded="True" code="FF42ZmWmZv" thumbCode="FF42ZmWmZv" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+        <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+      </images>
+    </page>
+  </pages>
+  <trash>
+    <page name="Page" ID="EB2C926F-026A-457A-8599-68603970A80E" expanded="True" code="gprGENdLVp" thumbCode="gprGENdLVp" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Page1" ID="33B3A9E0-D709-4B4B-AA81-AB2ADCC0A607" expanded="True" code="ClF1krcC7F" thumbCode="ClF1krcC7F" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Dropdown" ID="2CCE0F30-53ED-433F-918A-FB90B63328BD" expanded="True" code="RnIQOVaQ78" thumbCode="bcXhKHh1gY" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="F76E4017E7F2948B19AAF407C9D590D5.svg"/>
+        <image key="8657E9629ED61923A0D3326AD46FAF1A.svg"/>
+        <image key="2E967326C22523F5F084001B9F4E5BC7.svg"/>
+        <image key="75DD6B2C5FC45EC1E2CDE3AF97D06E83.svg"/>
+        <image key="DA139F0E584512EE783A4911D1FD02D3.svg"/>
+        <image key="29F37D064345EFF092FDE43A909201C4.svg"/>
+        <image key="6E397F998770B38A343BB5B849DF19E9.svg"/>
+      </images>
+    </page>
+    <page name="Elements" ID="685BA31E-434C-406F-910C-F3FC31883043" expanded="True" code="KrP4JBHlcb" thumbCode="mZCyDedPUC" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="62C23F59E2D195650370F88617D118A0.svg"/>
+        <image key="7FBA75BBE7297A6D0807023F2E26E244.svg"/>
+        <image key="5D1D168B3CDEF5C7DDB98F07F551D8A4.svg"/>
+        <image key="83BC1B9824209A7AE0DC9C21C64DC445.svg"/>
+        <image key="684CEEAB35D8E73FB7B429D4451E5C83.svg"/>
+        <image key="2E967326C22523F5F084001B9F4E5BC7.svg"/>
+        <image key="AA45E12719F4631654810A4DD86B0A76.svg"/>
+        <image key="DA139F0E584512EE783A4911D1FD02D3.svg"/>
+        <image key="671B6BE607975A74FB470B2A24F33C46.svg"/>
+        <image key="ED4AE21CCB3F8304CD5BD707EBEA739D.svg"/>
+        <image key="F83C46BD36C6E355F5598C35117157C1.svg"/>
+      </images>
+    </page>
+    <page name="Aesthetic Design" ID="5A41DF51-D699-43F1-AEBC-DAC52A2DA912" expanded="True" code="VLsvNQjsQf" thumbCode="JRsBExRPh2" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Branding &amp; Identity" ID="EBDBC0C7-194E-4CB8-851F-C0AD7EB33F39" expanded="False" code="rBNDyONUqu" thumbCode="oQyIKw4BxB" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Online Shop" ID="2AFE9D57-BE88-4562-875C-5A4E9A855E1C" expanded="False" code="qASgsVf2ZK" thumbCode="cfdXJOLIP3" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Contact" ID="DB2B90DF-6779-4227-8638-B99D393B83D4" expanded="True" code="cikAwuwfts" thumbCode="i9sPrvAUCQ" status="psWhite" isfolder="False" isshownode="True">
+      <images>
+        <image key="F76E4017E7F2948B19AAF407C9D590D5.svg"/>
+        <image key="8657E9629ED61923A0D3326AD46FAF1A.svg"/>
+        <image key="2E967326C22523F5F084001B9F4E5BC7.svg"/>
+        <image key="75DD6B2C5FC45EC1E2CDE3AF97D06E83.svg"/>
+        <image key="DA139F0E584512EE783A4911D1FD02D3.svg"/>
+        <image key="29F37D064345EFF092FDE43A909201C4.svg"/>
+        <image key="6E397F998770B38A343BB5B849DF19E9.svg"/>
+      </images>
+    </page>
+    <page name="Custom Playlists" ID="3DDB1469-27B8-42EB-9D56-602CC01B23F4" expanded="False" code="6dME3Nl1Jp" thumbCode="HVvVTH4FLd" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True"/>
+    <page name="Page" ID="40A94376-A2E6-47D0-A351-818FF4358745" expanded="False" code="i72r53ia1G" thumbCode="FEOHNzg8Qg" isLastOpen="True" status="psWhite" isfolder="False" isshownode="True"/>
+  </trash>
+  <deletes/>
+  <masters>
+    <master name="Master" ID="0D1EBF0B-B2A9-46C5-9DDB-1EA0DC452FA3" code="tieMOy1983" status="psWhite" createDate="1899-12-30 00:00:00">
+      <refPages>
+        <page ID="DB2B90DF-6779-4227-8638-B99D393B83D4" refCount="1"/>
+        <page ID="2CCE0F30-53ED-433F-918A-FB90B63328BD" refCount="1"/>
+      </refPages>
+      <images>
+        <image key="F76E4017E7F2948B19AAF407C9D590D5.svg"/>
+        <image key="8657E9629ED61923A0D3326AD46FAF1A.svg"/>
+        <image key="75DD6B2C5FC45EC1E2CDE3AF97D06E83.svg"/>
+        <image key="29F37D064345EFF092FDE43A909201C4.svg"/>
+        <image key="6E397F998770B38A343BB5B849DF19E9.svg"/>
+      </images>
+    </master>
+  </masters>
+  <images>
+    <image key="62C23F59E2D195650370F88617D118A0.svg"/>
+    <image key="F76E4017E7F2948B19AAF407C9D590D5.svg"/>
+    <image key="5D1D168B3CDEF5C7DDB98F07F551D8A4.svg"/>
+    <image key="684CEEAB35D8E73FB7B429D4451E5C83.svg"/>
+    <image key="AA45E12719F4631654810A4DD86B0A76.svg"/>
+    <image key="6E397F998770B38A343BB5B849DF19E9.svg"/>
+    <image key="671B6BE607975A74FB470B2A24F33C46.svg"/>
+    <image key="ED4AE21CCB3F8304CD5BD707EBEA739D.svg"/>
+    <image key="F83C46BD36C6E355F5598C35117157C1.svg"/>
+    <image key="E824BDFC2A61421270F3A0DA09351C67.svg"/>
+    <image key="7FBA75BBE7297A6D0807023F2E26E244.svg"/>
+    <image key="83BC1B9824209A7AE0DC9C21C64DC445.svg"/>
+    <image key="8657E9629ED61923A0D3326AD46FAF1A.svg"/>
+    <image key="75DD6B2C5FC45EC1E2CDE3AF97D06E83.svg"/>
+    <image key="DA139F0E584512EE783A4911D1FD02D3.svg"/>
+    <image key="29F37D064345EFF092FDE43A909201C4.svg"/>
+    <image key="2E967326C22523F5F084001B9F4E5BC7.svg"/>
+    <image key="9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg"/>
+  </images>
+</project>

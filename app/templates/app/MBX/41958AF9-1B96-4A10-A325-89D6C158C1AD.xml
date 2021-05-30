@@ -1,0 +1,684 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="41958AF9-1B96-4A10-A325-89D6C158C1AD" platform="MtWeb" defaultW="1388" defaultH="1768" measureW="1388" measureH="1768" mobileScreenScale="0">
+  <controls controlCount="92">
+    <control controlID="65ECDAFA-D284-4168-8952-02A2517CDC54" controlTypeID="Image" x="1224" y="14" w="144" h="66" zOrder="0">
+      <caption>Logo</caption>
+    </control>
+    <control controlID="39140390-0360-443F-9E70-3B8DF7EF8525" controlTypeID="Label" x="23" y="14" w="574" h="52" zOrder="1">
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Audio+Streaming+Service</text>
+      <textSize>40</textSize>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="AD33FB44-10B1-4707-9D96-1CD7DDBA61EA" controlTypeID="Button" x="602" y="114" w="254" h="124" zOrder="2">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="8362335E-89B3-4FFA-965A-4663AED09055" linkType="ltPageLink" isApplyIncludePage="False" title="Home">
+          <area shape="0" alt="" ID="{C0D49A04-B7AB-45DA-82A1-25B8FDADF1A0}" coords="(0,0,254,124)"/>
+        </link>
+      </links>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Home</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="971C7FE1-449D-4BC1-A85B-47E1159D8B43" controlTypeID="ImageCarousel" x="23" y="90" w="551" h="318" zOrder="3">
+      <caption>Album+Cover+Carousel+</caption>
+      <groupChildrenDescriptors/>
+    </control>
+    <control controlID="F56B1898-203B-4E19-ABDA-D59A767108A1" controlTypeID="Button" x="885" y="114" w="254" h="124" zOrder="4">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="4300D863-6E28-486C-B2FB-0FA77F9B0A4A" linkType="ltPageLink" isApplyIncludePage="False" title="Create+Playlist">
+          <area shape="0" alt="" ID="{212C8EEB-0C96-4B80-8367-FCDE94220D18}" coords="(0,0,254,124)"/>
+        </link>
+      </links>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Create+Playlist</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="9F37105D-2896-49AC-B258-FC17000AB510" controlTypeID="Button" x="1172" y="114" w="206" h="270" zOrder="5">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="948B91D7-B909-4236-AFC1-F38A1D9070C4" linkType="ltPageLink" isApplyIncludePage="False" title="File+Upload+Pop+Up">
+          <area shape="0" alt="" ID="{3927A743-0C37-416E-9E2F-86E833311616}" coords="(0,0,206,270)"/>
+        </link>
+      </links>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Upload+Song</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="F605A100-471A-4B60-8735-1493C5416B18" controlTypeID="Button" x="602" y="261" w="254" h="123" zOrder="6">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="89CAF04B-1524-4FE3-BEB0-98EBEFAA846C" linkType="ltPageLink" isApplyIncludePage="False" title="Favorite+Songs">
+          <area shape="0" alt="" ID="{8561F365-33A1-425E-ADB0-3D4C0C90F0F1}" coords="(0,0,254,123)"/>
+        </link>
+      </links>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Your+Songs</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="34503435-857F-456E-8241-000FD56FD705" controlTypeID="Button" x="886" y="260" w="254" h="124" zOrder="7">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="41958AF9-1B96-4A10-A325-89D6C158C1AD" linkType="ltPageLink" isApplyIncludePage="False" title="User's+Playlists">
+          <area shape="0" alt="" ID="{952B4D9E-67A4-4C98-8392-1F613A054CAC}" coords="(0,0,254,124)"/>
+        </link>
+      </links>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>Your+Playlists</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="3A2C6860-733A-4F50-9809-29240BCFD0CB" controlTypeID="Button" x="1224" y="14" w="144" h="66" zOrder="8">
+      <states>
+        <state propName="Color" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="BorderColor" stateType="state_mouseOver" isChecked="True" value="4294530389" varType="20"/>
+        <state propName="TextColor" stateType="state_mouseOver" isChecked="True" value="4294967295" varType="20"/>
+      </states>
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>This+Button+Does+Nothing</text>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+      <radius>4</radius>
+    </control>
+    <control controlID="9781D274-8F61-42E6-A6D5-7682CB2C1F73" controlTypeID="Shape" x="0" y="440" w="1388" h="1228" zOrder="9">
+      <color>2331989634</color>
+      <borderColor>4288256409</borderColor>
+      <opacity>0.899999976158142</opacity>
+      <font family="Calibri" displayName="Calibri" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <textSize>14</textSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="85FFABB1-B396-4A75-8CAF-00B49BB55906" controlTypeID="Label" x="497" y="468" w="401" h="52" zOrder="10">
+      <font family="Snap+ITC" displayName="Snap+ITC" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False" useDefaultFontFamily="False"/>
+      <text>%5BUser%5D's+Playlists</text>
+      <textSize>40</textSize>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="EFD75827-34A6-449C-98C7-E9CB2A20BC2A" controlTypeID="ScrollView" x="4" y="536" w="1386" h="1131" zOrder="11">
+      <color>16777215</color>
+      <borderColor>4291611852</borderColor>
+      <groupChildrenDescriptors>
+        <control controlID="96B5873D-6D60-456C-AB3C-052D83E24141" controlTypeID="ScrollViewContentPanel" x="0" y="0" w="1386" h="1322" zOrder="0">
+          <alias>contentPanel</alias>
+          <groupChildrenDescriptors>
+            <control controlID="59721F42-C5CA-40BF-A414-5FBE8753999D" controlTypeID="__group__" x="720" y="31" w="490" h="171" zOrder="0">
+              <groupChildrenDescriptors>
+                <control controlID="2FDFEEF8-EB53-47AE-A6E5-7BD20699AC51" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="357D2C52-D6B8-431B-AB99-6C3BFEBA9975" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="74F9BF2E-1E4E-47FD-A279-2C139980304F" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="20053A10-D2CF-43C1-BD6B-5B80FE6167B2" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="14E35143-22E8-48C1-92B4-36AA3D0DBBA5" controlTypeID="__group__" x="180" y="31" w="490" h="171" zOrder="1">
+              <groupChildrenDescriptors>
+                <control controlID="83340130-8DF5-45AE-BFC2-E8F4390309D6" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="A33BB608-0C35-4DC6-8F3D-19B0B1FB5B96" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="603B9880-F646-4FCA-8EA9-092A1031DA35" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="F9611A7A-F30B-49E1-B879-5461D0AA107A" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="7700C05F-CCA5-44F3-B2AE-B318B6C204D9" controlTypeID="__group__" x="720" y="243" w="490" h="171" zOrder="2">
+              <groupChildrenDescriptors>
+                <control controlID="08FA7C8D-E4CB-41E0-B229-166D1112CADD" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="7B8B97BF-2D69-45E6-B5F8-16E5B1EE4F7E" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="E114A3F4-F4FB-4E3A-9B8B-BB1408F6868E" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="98923EF3-A967-41B0-8404-56B812F610AD" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="D0D923D4-BD31-4E2C-965B-48E72504FA65" controlTypeID="__group__" x="180" y="243" w="490" h="171" zOrder="3">
+              <groupChildrenDescriptors>
+                <control controlID="4B8DD452-01D6-4C73-A075-52A96A830244" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="3B1B91E5-03F3-4470-976D-A3B593E09565" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="6BA72445-5F2A-4B68-93AD-57202DA51736" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="6208E593-0830-40CC-8337-3B9607B1A4EC" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="477B15ED-87AF-4960-B091-3C1833D5B185" controlTypeID="__group__" x="720" y="454" w="490" h="171" zOrder="4">
+              <groupChildrenDescriptors>
+                <control controlID="DD74FD3C-E7F0-411C-A571-AAE4B50EDCCA" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="372A3254-1574-4EC2-8EA6-03F64F945009" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="E46D8D62-8F97-449A-A4B8-D08F7C927C64" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="35A3F566-12CC-46E8-8C2D-5569150E955D" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="8C47E5D3-C7ED-4C7F-9CEA-11A3B7BAF6AF" controlTypeID="__group__" x="180" y="454" w="490" h="171" zOrder="5">
+              <groupChildrenDescriptors>
+                <control controlID="64429F75-BBC4-4019-BAA9-EE6D6A51B275" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="BA438F7F-202C-4B62-AF4C-1C68CD33B48A" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="40EC082C-15C0-478A-B616-D1AE0244D19D" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="7C04E00E-BBBC-4CEE-925E-57F59F49ADC9" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="1C00A100-E811-4AB4-8030-9852EFE47A4C" controlTypeID="__group__" x="720" y="668" w="490" h="171" zOrder="6">
+              <groupChildrenDescriptors>
+                <control controlID="EEFEFFC0-A6C6-417D-AB7A-053F2A56B325" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="564CED30-CD5E-4291-8FC7-DA440F63404A" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="A4F23526-6DC1-486E-AE65-F93CCB0F0D52" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="7ECFA1B7-731B-434B-AB13-C22CE49842C7" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="F6817E5D-87B1-4AB2-94EF-AA0089CCDE5A" controlTypeID="__group__" x="180" y="668" w="490" h="171" zOrder="7">
+              <groupChildrenDescriptors>
+                <control controlID="58FDC8FE-C8E8-4B4E-A034-B4110EEA984B" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="C16785C4-50B5-4A09-BD5D-31C8D880F6FB" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="57391951-1E63-491C-B594-1AAC03C028A9" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="414DD955-5EBE-44B9-AEEF-F133E13DAD93" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="BB9E1090-04A4-43C5-A6D1-75130318F555" controlTypeID="__group__" x="720" y="880" w="490" h="171" zOrder="8">
+              <groupChildrenDescriptors>
+                <control controlID="D7A7F902-FB20-4512-94BD-8D16505A5CC5" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="13FBA3D4-A071-48A0-B679-3239E1598E76" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="4C11E8E6-1F66-4640-A670-4489B4592BB4" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="1141F39F-D9E3-4BD1-B5B2-E02B527FA23D" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="DC79A4DE-4471-46D2-A3CF-C2A168708C04" controlTypeID="__group__" x="180" y="880" w="490" h="171" zOrder="9">
+              <groupChildrenDescriptors>
+                <control controlID="19B2A0B0-DD30-475C-AB46-7E68395C8489" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="C2512016-A4DE-4E61-BD3D-205DC7074F4C" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="03570C95-2F7E-4E19-974F-A01962497D45" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="36A33E25-657B-477A-A3AB-FB3D1770FE13" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="20FF8F84-D580-46FA-8303-9E5DBAEBEB5A" controlTypeID="__group__" x="720" y="1091" w="490" h="171" zOrder="10">
+              <groupChildrenDescriptors>
+                <control controlID="F25940A4-068E-4AFD-9B2A-8691D75FAFA8" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="76B819D1-5DA5-4634-A688-D101B76603C1" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="7BF18656-7F7D-46AB-A92F-100B002C2526" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="17E76076-94C9-4B07-B43C-947F663CC6B8" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+            <control controlID="6EB46E4B-9F5F-4AB6-98A6-B634DC142C51" controlTypeID="__group__" x="180" y="1091" w="490" h="171" zOrder="11">
+              <groupChildrenDescriptors>
+                <control controlID="9EA2386B-AF55-4891-B48B-9DCAE012D8E7" controlTypeID="Shape" x="0" y="0" w="490" h="171" zOrder="0">
+                  <color>4291611852</color>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <textSize>14</textSize>
+                  <selectedIndex>-1</selectedIndex>
+                  <radius>6</radius>
+                </control>
+                <control controlID="F34FAAF7-64D3-4491-9C88-4FF4EEF56B3A" controlTypeID="Image" x="164" y="0" w="161" h="171" zOrder="1">
+                  <caption>Cover</caption>
+                </control>
+                <control controlID="AD60B8B5-3599-44E4-9F67-51D83277861C" controlTypeID="TextArea" x="335" y="9" w="146" h="151" zOrder="2">
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Custom+Playlist+Description.</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+                <control controlID="A518DBE8-B0E2-4D50-9E50-7C004EA7F491" controlTypeID="TextArea" x="10" y="9" w="146" h="151" zOrder="3">
+                  <borderColor>4278190080</borderColor>
+                  <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+                  <text>Playlist+Name+%7E+Creator</text>
+                  <textColor>4284900966</textColor>
+                  <textSize>18</textSize>
+                  <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+                  <useDefaultTextSize>False</useDefaultTextSize>
+                  <selectedIndex>-1</selectedIndex>
+                </control>
+              </groupChildrenDescriptors>
+            </control>
+          </groupChildrenDescriptors>
+        </control>
+        <control controlID="DE95346A-BD1E-4977-95D5-127509E11622" controlTypeID="Border" x="0" y="0" w="1386" h="1131" zOrder="1">
+          <color>4284900966</color>
+          <borderColor>4291611852</borderColor>
+          <alias>borderLayer</alias>
+        </control>
+      </groupChildrenDescriptors>
+      <canHoriScroll>True</canHoriScroll>
+    </control>
+    <control controlID="A6C7A757-B67A-44D0-B325-2FB76288EA5A" controlTypeID="__group__" x="23" y="1679" w="1081" h="89" zOrder="12">
+      <groupChildrenDescriptors>
+        <control controlID="048E10F8-DAAF-4590-B2B4-F917F459C8E5" controlTypeID="ProgressBar" x="336" y="13" w="745" h="20" zOrder="0"/>
+        <control controlID="F7B3A33A-6C78-46C3-ACB1-8D004777B803" controlTypeID="VolumeSlider" x="818" y="51" w="197" h="18" zOrder="1"/>
+        <control controlID="382DBBBF-5A63-4443-A33D-DB3B2900F395" controlTypeID="Media_Control" x="561" y="38" w="222" h="51" zOrder="2"/>
+        <control controlID="9CB6F4A8-9737-4243-B87E-9F1760B44B08" controlTypeID="Image" x="0" y="0" w="78" h="76" zOrder="3">
+          <caption>Cover</caption>
+        </control>
+        <control controlID="C31E0703-C2A7-4AC6-91C0-AE1EAC1E6A50" controlTypeID="TextArea" x="88" y="7" w="155" h="31" zOrder="4">
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Current+Song</text>
+          <textSize>24</textSize>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="867C4D92-9DB5-4EFA-9F2D-5F57E99E15DF" controlTypeID="TextArea" x="88" y="38" w="155" h="31" zOrder="5">
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Artist</text>
+          <textSize>20</textSize>
+          <useDefaultTextSize>False</useDefaultTextSize>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="DA301874-217B-403B-B3F6-224137083D29" controlTypeID="Search" x="626" y="23" w="225" h="52" zOrder="13">
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <textSize>14</textSize>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="62BD0C22-3936-4C5B-B636-4DBD30059804" controlTypeID="IconButton2" x="878" y="30" w="38" h="38" zOrder="14">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="547B8072-7F0B-4800-B8CD-22DD3375BA4D" linkType="ltPageLink" isApplyIncludePage="False" title="Artist's+Content">
+          <area shape="0" alt="" ID="{7E07FE64-694F-46A4-B8E4-EC5D19BA3199}" coords="(0,0,38,38)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="ACD3DF3E-91F5-43ED-A48E-5E0127990822" controlTypeID="Shape" x="0" y="0" w="38" h="38" zOrder="0">
+          <canMove>False</canMove>
+          <alias>shape</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <textSize>14</textSize>
+          <selectedIndex>-1</selectedIndex>
+          <shapeBorderType>SbEllipse</shapeBorderType>
+        </control>
+        <control controlID="19D9E154-5296-4F66-B4D7-BBE50C59EFD9" controlTypeID="Icon" x="7" y="7" w="24" h="24" zOrder="1">
+          <canMove>False</canMove>
+          <alias>icon</alias>
+          <icon>
+            <ID/>
+            <iconFontName>jdIonicons</iconFontName>
+            <iconCode>62304</iconCode>
+          </icon>
+          <URL>E824BDFC2A61421270F3A0DA09351C67.svg</URL>
+        </control>
+        <control controlID="DA0E9DC6-DB01-461E-B077-A7511E73FB2B" controlTypeID="Label" x="0" y="2" w="29" h="14" zOrder="2">
+          <canMove>False</canMove>
+          <alias>label</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Label</text>
+          <textSize>12</textSize>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="DC035880-6BC4-46C2-B134-F9C38A83FC6B" controlTypeID="Shape" x="24" y="0" w="14" h="13" zOrder="3">
+          <color>4294901760</color>
+          <borderVisible>False</borderVisible>
+          <canMove>False</canMove>
+          <alias>alarm</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>2</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>100</radius>
+          <radiusIsPercent>True</radiusIsPercent>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+    <control controlID="D839E039-68C6-443E-8074-E0BB9557F1EF" controlTypeID="IconButton2" x="933" y="30" w="38" h="38" zOrder="15">
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="CFC4D028-B567-4D3B-A4F7-D2DF2F480AD7" linkType="ltPageLink" isApplyIncludePage="False" title="User's+Favorite+Songs">
+          <area shape="0" alt="" ID="{7425CDFB-51CC-4112-8D8E-5E13D8CCC997}" coords="(0,0,38,38)"/>
+        </link>
+      </links>
+      <groupChildrenDescriptors>
+        <control controlID="9F3A9317-4684-4099-813F-1C28B5FA8037" controlTypeID="Shape" x="0" y="0" w="38" h="38" zOrder="0">
+          <canMove>False</canMove>
+          <alias>shape</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <textSize>14</textSize>
+          <selectedIndex>-1</selectedIndex>
+          <shapeBorderType>SbEllipse</shapeBorderType>
+        </control>
+        <control controlID="3496D9A3-4EC7-4844-94EF-1BE445A15376" controlTypeID="Icon" x="7" y="7" w="24" h="24" zOrder="1">
+          <canMove>False</canMove>
+          <alias>icon</alias>
+          <icon>
+            <ID/>
+            <iconFontName>jdIonicons</iconFontName>
+            <iconCode>62306</iconCode>
+          </icon>
+          <URL>9DDACFA1CF56DBAEDCDB44BD9EE77A8A.svg</URL>
+        </control>
+        <control controlID="44C9DE4C-B6EF-485B-972F-78BE4E5CE84A" controlTypeID="Label" x="0" y="2" w="29" h="14" zOrder="2">
+          <canMove>False</canMove>
+          <alias>label</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>Label</text>
+          <textSize>12</textSize>
+          <textAlign>HaCenter</textAlign>
+          <lineSpacing>0</lineSpacing>
+          <selectedIndex>-1</selectedIndex>
+        </control>
+        <control controlID="335928BE-CB22-4184-9A13-57D9F61798CC" controlTypeID="Shape" x="24" y="0" w="14" h="13" zOrder="3">
+          <color>4294901760</color>
+          <borderVisible>False</borderVisible>
+          <canMove>False</canMove>
+          <alias>alarm</alias>
+          <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+          <text>2</text>
+          <textColor>4294967295</textColor>
+          <textSize>8</textSize>
+          <selectedIndex>-1</selectedIndex>
+          <radius>100</radius>
+          <radiusIsPercent>True</radiusIsPercent>
+        </control>
+      </groupChildrenDescriptors>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294765715</backgroundColor>
+    <fontSize>14</fontSize>
+    <fontFamily>Arial</fontFamily>
+    <guideLines/>
+  </param>
+</mockup>

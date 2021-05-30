@@ -1,0 +1,148 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="2AFE9D57-BE88-4562-875C-5A4E9A855E1C" platform="MtWeb" defaultW="1388" defaultH="1668" measureW="1388" measureH="1668" mobileScreenScale="0">
+  <controls controlCount="3">
+    <control controlID="60FCFDC3-D309-4AD2-9E58-1E34936B0FEB" controlTypeID="Label" x="18" y="28" w="176" h="23" measuredW="0" measuredH="0" zOrder="0">
+      <text>Branding+%26+Identity</text>
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <textStyles>[]</textStyles>
+      <lineSpacing>23</lineSpacing>
+      <textWordWrap>True</textWordWrap>
+      <textVAlign>VaTop</textVAlign>
+      <textAlign>HaLeft</textAlign>
+      <lineSpacingMultiple>1</lineSpacingMultiple>
+      <textSize>20</textSize>
+      <textColor>4278190080</textColor>
+      <rotation>0</rotation>
+      <alias/>
+      <canMove>True</canMove>
+      <isCommentCom>False</isCommentCom>
+      <opacity>1</opacity>
+      <status>MsEnabled</status>
+      <isAutoSize>True</isAutoSize>
+      <borderColor>4284900966</borderColor>
+      <borderVisible>True</borderVisible>
+      <color>0</color>
+      <textPadding>0</textPadding>
+      <selectedColor>4282501083</selectedColor>
+      <selectedIndex>-1</selectedIndex>
+      <interactiveData>
+        <entry title="">
+          <area shape="0" alt="" ID="{B4A23A75-FEA6-444B-BDCF-50AB2BDA5039}" coords="(0,0,176,23)"/>
+          <events title=""/>
+        </entry>
+      </interactiveData>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="" linkType="ltPageLink" isApplyIncludePage="False" title="Link">
+          <area shape="0" alt="" ID="{F10A45FA-31A3-4038-B29E-9A9436193239}" coords="(0,0,176,23)"/>
+        </link>
+      </links>
+      <horizontalScrollbarProgress>0</horizontalScrollbarProgress>
+      <horizontalScrollbarShow>False</horizontalScrollbarShow>
+      <verticalScrollbarProgress>0</verticalScrollbarProgress>
+      <verticalScrollbarShow>False</verticalScrollbarShow>
+      <states/>
+      <isShow>True</isShow>
+      <caption>Label</caption>
+      <locked>False</locked>
+      <sizeLocked>False</sizeLocked>
+    </control>
+    <control controlID="4E803801-7F36-4E12-8C0D-CC8889BF7438" controlTypeID="TextArea" x="18" y="77" w="423" h="299" measuredW="0" measuredH="90" zOrder="1">
+      <text>Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipisicing+elit.+Assumenda+quis+deserunt+dolorem%2C+debitis+cupiditate+nihil+velit+dolores%2C+inventore+voluptatem+delectus+quos+atque+similique+natus+eaque+qui%2C+nisi+repudiandae+dolore+sit!+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipisicing+elit.+Cum+aut+maxime+eius+magnam.</text>
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <textStyles>[]</textStyles>
+      <lineSpacing>27</lineSpacing>
+      <textWordWrap>True</textWordWrap>
+      <textVAlign>VaTop</textVAlign>
+      <textAlign>HaLeft</textAlign>
+      <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+      <textSize>18</textSize>
+      <textColor>4287338143</textColor>
+      <rotation>0</rotation>
+      <alias/>
+      <canMove>True</canMove>
+      <isCommentCom>False</isCommentCom>
+      <opacity>1</opacity>
+      <status>MsEnabled</status>
+      <isAutoSize>False</isAutoSize>
+      <borderColor>4284900966</borderColor>
+      <borderVisible>False</borderVisible>
+      <color>16777215</color>
+      <textPadding>0</textPadding>
+      <selectedColor>4282501083</selectedColor>
+      <selectedIndex>-1</selectedIndex>
+      <interactiveData>
+        <entry title="">
+          <area shape="0" alt="" ID="{5D79B1CF-12CA-460F-9DF3-254318AC53F9}" coords="(0,0,423,299)"/>
+          <events title=""/>
+        </entry>
+      </interactiveData>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="" linkType="ltPageLink" isApplyIncludePage="False" title="Link">
+          <area shape="0" alt="" ID="{3D09BA42-74CF-460D-B1C0-500A266ED2C2}" coords="(0,0,423,299)"/>
+        </link>
+      </links>
+      <horizontalScrollbarProgress>0</horizontalScrollbarProgress>
+      <horizontalScrollbarShow>False</horizontalScrollbarShow>
+      <verticalScrollbarProgress>0</verticalScrollbarProgress>
+      <verticalScrollbarShow>False</verticalScrollbarShow>
+      <states/>
+      <isShow>True</isShow>
+      <caption>Text+Area</caption>
+      <locked>False</locked>
+      <sizeLocked>False</sizeLocked>
+    </control>
+    <control controlID="4FBC7206-29A8-48C9-82BA-E6775F7340E0" controlTypeID="TextArea" x="526" y="77" w="429" h="251" measuredW="0" measuredH="90" zOrder="2">
+      <text>Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipisicing+elit.+Odio+voluptatem%2C+vitae+nesciunt+ad+hic+quam+quisquam+sit+possimus+officia+ratione.+Lorem+ipsum+dolor+sit+amet%2C+consectetur+adipisicing+elit.+Molestias%2C+ex.+Lorem+ipsum+dolor+sit+amet.</text>
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <textStyles>[]</textStyles>
+      <lineSpacing>27</lineSpacing>
+      <textWordWrap>True</textWordWrap>
+      <textVAlign>VaTop</textVAlign>
+      <textAlign>HaLeft</textAlign>
+      <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+      <textSize>18</textSize>
+      <textColor>4287338143</textColor>
+      <rotation>0</rotation>
+      <alias/>
+      <canMove>True</canMove>
+      <isCommentCom>False</isCommentCom>
+      <opacity>1</opacity>
+      <status>MsEnabled</status>
+      <isAutoSize>False</isAutoSize>
+      <borderColor>4284900966</borderColor>
+      <borderVisible>False</borderVisible>
+      <color>16777215</color>
+      <textPadding>0</textPadding>
+      <selectedColor>4282501083</selectedColor>
+      <selectedIndex>-1</selectedIndex>
+      <interactiveData>
+        <entry title="">
+          <area shape="0" alt="" ID="{5D79B1CF-12CA-460F-9DF3-254318AC53F9}" coords="(0,0,429,251)"/>
+          <events title=""/>
+        </entry>
+      </interactiveData>
+      <links eventType="AtClick" animate="AmNone" animateAutoDelay="0" animateDuration="500">
+        <link targetPageID="" linkType="ltPageLink" isApplyIncludePage="False" title="Link">
+          <area shape="0" alt="" ID="{3D09BA42-74CF-460D-B1C0-500A266ED2C2}" coords="(0,0,429,251)"/>
+        </link>
+      </links>
+      <horizontalScrollbarProgress>0</horizontalScrollbarProgress>
+      <horizontalScrollbarShow>False</horizontalScrollbarShow>
+      <verticalScrollbarProgress>0</verticalScrollbarProgress>
+      <verticalScrollbarShow>False</verticalScrollbarShow>
+      <states/>
+      <isShow>True</isShow>
+      <caption>Text+Area</caption>
+      <locked>False</locked>
+      <sizeLocked>False</sizeLocked>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294765715</backgroundColor>
+    <fontSize>14</fontSize>
+    <fontFamily>Arial</fontFamily>
+    <guideLines/>
+  </param>
+</mockup>

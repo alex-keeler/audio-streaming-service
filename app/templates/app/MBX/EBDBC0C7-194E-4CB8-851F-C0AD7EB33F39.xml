@@ -1,0 +1,37 @@
+﻿<mockup version="5.3" minAllowVersion="5.3" ID="EBDBC0C7-194E-4CB8-851F-C0AD7EB33F39" platform="MtWeb" defaultW="1388" defaultH="1668" measureW="1388" measureH="1668" mobileScreenScale="0">
+  <controls controlCount="3">
+    <control controlID="60FCFDC3-D309-4AD2-9E58-1E34936B0FEB" controlTypeID="Label" x="18" y="28" w="169" h="23" zOrder="0">
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Branding+%26+Identity</text>
+      <textSize>20</textSize>
+      <textVAlign>VaTop</textVAlign>
+      <lineSpacing>0</lineSpacing>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="4E803801-7F36-4E12-8C0D-CC8889BF7438" controlTypeID="TextArea" x="18" y="77" w="423" h="299" zOrder="1">
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>Nam+tristique+porttitor+neque%2C+sit+amet+aliquet+metus+ultricies+non.+Vestibulum+lacinia+ante+sit+amet+enim+iaculis+tempus.+Nulla+aliquam+tincidunt+leo%2C+et+consequat+justo+viverra+id.+Maecenas+lacinia+libero+vel+iaculis+tincidunt.+Quisque+luctus+massa+eu+sodales+vehicula.+Duis+gravida+at+nunc+sit+amet+sagittis.+Fusce+pulvinar+scelerisque+enim%2C+vel+interdum+erat+ullamcorper+a.+Cras+elementum+mauris+justo%2C+quis+lacinia+erat+mollis+sed.+Donec+malesuada+odio+eu+metus+consequat+interdum.</text>
+      <textColor>4287338143</textColor>
+      <textSize>18</textSize>
+      <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+    <control controlID="4FBC7206-29A8-48C9-82BA-E6775F7340E0" controlTypeID="TextArea" x="526" y="77" w="429" h="251" zOrder="2">
+      <font family="Arial" displayName="Arial" postScript="" weightStyle="Regular" weight="400" isBold="False" isItalic="False"/>
+      <text>In+varius%2C+ex+ut+tincidunt+tempor%2C+nunc+nisi+commodo+quam%2C+vel+volutpat+ex+eros+id+tellus.+Morbi+cursus+libero+mi.+In+condimentum+leo+in+libero+volutpat+rutrum.+Ut+pellentesque+finibus+lacus%2C+sed+imperdiet+ex+tincidunt+vel.+Proin+et+blandit+nisl%2C+dapibus+faucibus+urna.+Praesent+et+nisi+dictum%2C+placerat+purus+eget%2C+varius+est.+Suspendisse+potenti.+Curabitur+blandit+faucibus+auctor.</text>
+      <textColor>4287338143</textColor>
+      <textSize>18</textSize>
+      <lineSpacingMultiple>1.29999995231628</lineSpacingMultiple>
+      <useDefaultTextSize>False</useDefaultTextSize>
+      <selectedIndex>-1</selectedIndex>
+    </control>
+  </controls>
+  <param>
+    <backgroundColor>4294765715</backgroundColor>
+    <fontSize>14</fontSize>
+    <fontFamily>Arial</fontFamily>
+    <guideLines/>
+  </param>
+</mockup>
