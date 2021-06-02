@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+	<h1 style="text-align: center">Audio Streaming Service</h1>
+	<br>
+    <hr>
+    <div class="flex-container">
+    	<button class="flex-1 button-dashboard" onclick="window.location.href='{{url_for('playlists')}}'">Playlists</button>
+    	<button class="flex-1 button-dashboard" onclick="window.location.href='{{url_for('artists')}}'">Artists</button>
+    	<button class="flex-1 button-dashboard" onclick="window.location.href='{{url_for('albums')}}'">Albums</button>
+    	<button class="flex-1 button-dashboard" onclick="window.location.href='{{url_for('songs')}}'">Songs</button>
+    </div>
+
+{% endblock %}

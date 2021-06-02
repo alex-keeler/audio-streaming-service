@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+    <h1 style="text-align: center">Songs</h1>
+    <br>
+    <ul class="song-list">
+		{% for song in songs %}
+		    <li class="song-list-entry" id="audio-{{ song[0] }}" onclick="playSong('{{ song[0] }}', true)">
+		    	<img class="song-list-album-art" width="50" height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Polygondwanaland.jpg/440px-Polygondwanaland.jpg"></img>
+		    	<div class="song-list-entry-content">
+					<span class="song-title">{{ song[1] }}</span>
+					<span class="album-title">{{ song[6] }}</span>
+					<span class="song-duration">{{ song[2] }}</span>
+					<span class="flex-break"></span>
+					<span class="artist-title">{{ song[7] }}</span>
+		    	</div>
+		    </li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

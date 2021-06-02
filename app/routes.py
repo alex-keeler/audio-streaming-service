@@ -1,7 +1,12 @@
 from app import app
 from flask import Flask, render_template, redirect, url_for, flash, session, Response, request
 import PyWave
-from app.s3storage import create_presigned_url
+from app.s3storage import create_presigned_url, upload_file, BUCKET_NAME
+from app.database import Database
+from app.forms import UploadSongForm
+from werkzeug.utils import secure_filename
+from mutagen.mp3 import MP3
+import os
 
 SAMPLES = 65536
 RATE = 44100
@@ -9,10 +14,75 @@ BITS_PER_SAMPLE = 16
 CHANNELS = 2
 LENGTH = 15
 
+db = Database('audiouser', 'audiouser', 'audiostream')
+
 @app.route("/")
 @app.route("/index")
+@app.route("/home")
 def index():
-	return render_template("index.html")
+	return render_template("home.html")
+
+@app.route("/playlists")
+def playlists():
+	return render_template("playlists.html")
+
+@app.route("/artists")
+def artists():
+	return render_template("artists.html")
+
+@app.route("/albums")
+def albums():
+	return render_template("albums.html")
+
+@app.route("/songs")
+def songs():
+	songs = db.get_all_songs_loaded()
+	return render_template("songs.html", songs=songs)
+
+@app.route("/upload-song")
+def upload_song():
+	song_form = UploadSongForm()
+
+	return render_template("file_upload_to_s3.html", form=song_form)
+
+@app.route('/upload', methods=['get', 'post'])
+def upload():
+
+	form = UploadSongForm()
+	msg = ""
+
+	if form.validate_on_submit():
+		song_file = request.files[form.song_file.name]
+		song_filename = secure_filename(song_file.filename)
+		song_file.save(song_filename)
+
+		audio = MP3(song_file)
+		song_length = int(audio.info.length)
+
+		song_id = db.save_song(form.song_name.data, song_length, form.track_number.data, form.album_name.data, form.album_release_year.data, form.artist_name.data)
+		song = db.get_song_by_id(song_id)
+
+		msg = upload_file(BUCKET_NAME, song_filename, song[5] + ".mp3") # file uuid
+
+		os.remove(song_filename)
+
+	# if request.method == 'POST':
+	# 	img = request.files['file']
+	# 	if img:
+	# 		print(img)
+	# 		filename = secure_filename(img.filename)
+	# 		img.save(filename)
+
+	# 		msg = upload_file(BUCKET_NAME, filename, filename)
+	# 		# s3.upload_file(
+	# 		#     Bucket = BUCKET_NAME,
+	# 		#     Filename=filename,
+	# 		#     Key = filename
+	# 		# )
+	# 		# msg = "Upload Done ! "
+
+	return render_template("file_upload_to_s3.html", msg=msg, form=form)
+
 
 # DEPRECATED
 def genHeader(sample_rate, bits_per_sample, channels, samples):
@@ -102,23 +172,14 @@ def audio():
 
 @app.route("/audio-source")
 def get_audio_source():
-	track_index = request.args.get('track')
-	if not track_index:
-		track_index = 0
-	else:
-		track_index = int(track_index)
 
-	audio_path_lookup = [
-		"Polygondwanaland-MP3/1-crumbling-castle.mp3",
-		"Polygondwanaland-MP3/2-polygondwanaland.mp3",
-		"Polygondwanaland-MP3/3-the-castle-in-the-air.mp3",
-		"Polygondwanaland-MP3/4-deserted-dunes-welcome-weary-feet.mp3",
-		"Polygondwanaland-MP3/5-inner-cell.mp3",
-		"Polygondwanaland-MP3/6-loyalty.mp3",
-		"Polygondwanaland-MP3/7-horology.mp3",
-		"Polygondwanaland-MP3/8-tetrachromacy.mp3",
-		"Polygondwanaland-MP3/9-searching.mp3",
-		"Polygondwanaland-MP3/10-the-fourth-color.mp3"
-	]
+	song_id = request.args.get('song_id')
+	song = db.get_song_by_id(song_id)
+	print(song)
 
-	return create_presigned_url('audio-test-1468', audio_path_lookup[track_index])
+	if (song == None):
+		return ""
+
+	filepath = song[5] + ".mp3"
+
+	return create_presigned_url(BUCKET_NAME, filepath)

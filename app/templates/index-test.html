@@ -6,8 +6,11 @@
 		}
 
 		.audio-player-container {
-			height: 60px;
-			padding: 20px;
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			box-sizing: border-box;
+			padding: 35px;
 			background-color: #696969;
 			display: flex;
 			justify-content: center;
@@ -29,6 +32,32 @@
 			color: gray;
 			cursor: default;
 		}
+
+		.song-list {
+			border: 1px solid gray;
+			border-bottom: none;
+			padding: 0;
+			margin: 50px;
+			width: 600px;
+		}
+
+		.song-list-entry {
+			border-bottom: 1px solid gray;
+			padding: 10px 20px;
+			cursor: pointer;
+			list-style: none;
+		}
+
+		.song-list-entry:hover {
+			border-bottom: 1px solid gray;
+			padding: 10px 20px;
+			cursor: pointer;
+			background-color: lightgray;
+		}
+
+		.playing {
+			background-color: skyblue;
+		}
 	</style>
 
 	<head>
@@ -40,6 +69,12 @@
 	    <title>Index</title>
 	</head>
 	<body>
+		<ul class="song-list">
+			{% for song in songs %}
+			    <li class="song-list-entry" id="audio-{{ song[0] }}" onclick="playSong('{{ song[0] }}', true)">{{ song[1] }}</li>
+			{% endfor %}
+		</ul>
+
 	   	<audio id="audio" preload="metadata">
 	        <!-- <source src="{{ url_for('audio', track=0) }}" type="audio/x-wav"> -->
 	        Your browser does not support the audio element.
@@ -60,7 +95,7 @@
 
 <script>
 
-	var track = 0;
+	var track = 1;
 	var playing = false;
 	var muted = false;
 
@@ -75,7 +110,7 @@
 	$(document).ready(function() {
 		audio.pause();
 		var playing = false;
-		changeToTrack(track, false);
+		//playSong(track, false);
 
 		if (audio.readyState > 0) {
 			displayDuration();
@@ -126,7 +161,7 @@
 			track++;
 		}
 
-		changeToTrack(track, autoplay);
+		playSong(track, autoplay);
 	});
 
 	volumeSlider.addEventListener('input', (e) => {
@@ -136,9 +171,15 @@
 		audio.volume = value / 100;
 	});
 
-	const changeToTrack = (track, autoplay) => {
+	const playSong = (songId, autoplay) => {
+		track = songId; // remove
+
+		durationContainer.textContent = "Loading...";
+		$(".playing").removeClass("playing");
+		$("#audio-" + songId).addClass("playing");
+
 		$.ajax({
-			url: "/audio-source?track=" + track,
+			url: "/audio-source?song_id=" + songId,
 			success: function(result) {
 				console.log(result);
 				audio.src = result;
@@ -168,25 +209,25 @@
 	});
 
 	$("#skip-forward-button").click(function() {
-		if (track == 9) {
-			track = 0;
+		if (track == 10) {
+			track = 1;
 		} else {
 			track++;
 		}
 
-		changeToTrack(track, true);
+		playSong(track, true);
 	});
 
 	$("#skip-backward-button").click(function() {
 		if (Math.floor(audio.currentTime) < 2) { // if midway through song, restart song. cutoff point is 2 seconds in.
-			if (track == 0) {
-				track = 9;
+			if (track == 1) {
+				track = 10;
 			} else {
 				track--;
 			}
 		}
 
-		changeToTrack(track, true);
+		playSong(track, true);
 	});
 
 	$("#mute-button").click(function() {
