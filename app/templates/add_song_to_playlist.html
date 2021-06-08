@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+
+	<div class="container app-form">
+		<h1 class="page-title">Add Song To Playlist</h1>
+		<h4 class="page-subtitle">{{ song[1] }} - {{ song[7] }}</h4>
+		<hr>
+		{{ wtf.quick_form(form) }}
+	</div>
+
+	<h4 class="page-subtitle">{{msg}}</h4>
+
+{% endblock %}

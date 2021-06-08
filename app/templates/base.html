@@ -10,8 +10,10 @@
         {{ super() }}
         <link href="static/css/base.css" type="text/css" rel="stylesheet">
     {% endblock %}
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://kit.fontawesome.com/c22a091da8.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/c22a091da8.js" crossorigin="anonymous"></script> -->
+	<script type="text/javascript" src="{{ url_for('static', filename = 'lib/jquery.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename = 'lib/font-awesome.js') }}"></script>
 {% endblock %}
 
 {% block navbar %}
@@ -54,180 +56,10 @@
         <div class="app-content">
 	        {% block app_content %}{% endblock %}
 	    </div>
-
-        <audio id="audio" preload="metadata">
-	        <!-- <source src="{{ url_for('audio', track=0) }}" type="audio/x-wav"> -->
-	        Your browser does not support the audio element.
-	    </audio>
-	    <div class="audio-player-container">
-	    	<button class="icon-button" id="skip-backward-button"><i class="fas fa-backward fa-2x" ></i></button>
-	    	<button class="icon-button" id="play-button"><i class="fas fa-play fa-2x"></i></button>
-	    	<button class="icon-button" id="skip-forward-button"><i class="fas fa-forward fa-2x" ></i></button>
-	    	<span class="audio-player-space"></span>
-	    	<span class="audio-player-text" id="current-time">0:00</span>
-	    	<input type="range" id="seek-slider" max="100" value="0">
-	    	<span class="audio-player-text" id="duration">0:00</span>
-	    	<span class="audio-player-space"></span>
-	    	<span class="audio-player-text" id="volume-output">100</span>
-  			<input type="range" id="volume-slider" max="100" value="100">
-  			<button class="icon-button" id="mute-button"><i class="fas fa-volume-up fa-2x"></i></button>
-	    </div>
     </div>
 
 {% endblock %}
 
 {% block scripts %}
-
-	<script>
-
-		var track = 1;
-		var playing = false;
-		var muted = false;
-
-		const audio = document.getElementById("audio");
-		audio.preload = "metadata";
-		const durationContainer = document.getElementById("duration");
-		const seekSlider = document.getElementById('seek-slider');
-		const currentTimeContainer = document.getElementById('current-time');
-		const volumeSlider = document.getElementById('volume-slider');
-		const outputContainer = document.getElementById('volume-output');
-
-		$(document).ready(function() {
-			audio.pause();
-			var playing = false;
-			//playSong(track, false);
-
-			if (audio.readyState > 0) {
-				displayDuration();
-				setSliderMax();
-			} else {
-				audio.addEventListener('loadedmetadata', () => {
-					displayDuration();
-					setSliderMax();
-				});
-			}
-		});
-
-		const calculateTime = (secs) => {
-			const minutes = Math.floor(secs / 60);
-			const seconds = Math.floor(secs % 60);
-			const returnedSeconds = seconds < 10 ? `0${seconds}` : `${seconds}`;
-			return `${minutes}:${returnedSeconds}`;
-		}
-
-		const displayDuration = () => {
-			durationContainer.textContent = calculateTime(audio.duration);
-		}
-
-		const setSliderMax = () => {
-			seekSlider.max = Math.floor(audio.duration);
-		}
-
-		seekSlider.addEventListener('input', () => {
-			audio.currentTime = seekSlider.value;
-			currentTimeContainer.textContent = calculateTime(seekSlider.value);
-		});
-
-		seekSlider.addEventListener('change', () => {
-			audio.currentTime = seekSlider.value;
-		});
-
-		audio.addEventListener('timeupdate', () => {
-	  		seekSlider.value = Math.floor(audio.currentTime);
-	  		currentTimeContainer.textContent = calculateTime(audio.currentTime);
-		});
-
-		audio.addEventListener('ended', () => {
-			autoplay = true;
-			if (track == 9) {
-				track = 0;
-				autoplay = false;
-			} else {
-				track++;
-			}
-
-			playSong(track, autoplay);
-		});
-
-		volumeSlider.addEventListener('input', (e) => {
-			var value = e.target.value;
-
-			outputContainer.textContent = value;
-			audio.volume = value / 100;
-		});
-
-		const playSong = (songId, autoplay) => {
-			track = songId; // remove
-
-			durationContainer.textContent = "Loading...";
-			$(".playing").removeClass("playing");
-			$("#audio-" + songId).addClass("playing");
-
-			$.ajax({
-				url: "/audio-source?song_id=" + songId,
-				success: function(result) {
-					console.log(result);
-					audio.src = result;
-					if (autoplay) {
-						audio.play();
-						playing = true;
-						$("#play-button").find("i").attr("class", "fas fa-pause fa-2x");
-					} else {
-						$("#play-button").find("i").attr("class", "fas fa-play fa-2x");
-					}
-				},
-				error: function(result) {
-					console.error(result);
-				}
-			});
-		}
-
-		$("#play-button").click(function() {
-			if (playing) {
-				audio.pause();
-				playing = false;
-				$("#play-button").find("i").attr("class", "fas fa-play fa-2x");
-			} else {
-				audio.play();
-				playing = true;
-				$("#play-button").find("i").attr("class", "fas fa-pause fa-2x");
-			}
-		});
-
-		$("#skip-forward-button").click(function() {
-			if (track == 10) {
-				track = 1;
-			} else {
-				track++;
-			}
-
-			playSong(track, true);
-		});
-
-		$("#skip-backward-button").click(function() {
-			if (Math.floor(audio.currentTime) < 2) { // if midway through song, restart song. cutoff point is 2 seconds in.
-				if (track == 1) {
-					track = 10;
-				} else {
-					track--;
-				}
-			}
-
-			playSong(track, true);
-		});
-
-		$("#mute-button").click(function() {
-			if(muted) {
-				audio.muted = false;
-				muted = false;
-				$("#mute-button").find("i").attr("class", "fas fa-volume-up fa-2x");
-			} else {
-				audio.muted = true;
-				muted = true;
-				$("#mute-button").find("i").attr("class", "fas fa-volume-mute fa-2x")
-		 	}
-		 });
-
-	</script>
-
+	{% block app_scripts %}{% endblock %}
 {% endblock %}

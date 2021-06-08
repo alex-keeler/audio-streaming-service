@@ -19,7 +19,6 @@
     text-align: center;
 }
 
-
 :root {
     --primary-green: #18453B;
     --green: #0DB14B;
@@ -40,6 +39,15 @@
 
 .app-content {
     padding-bottom: 150px;
+}
+
+.page-title {
+    text-align: center;
+}
+
+.page-subtitle {
+    text-align: center;
+    color: gray;
 }
 
 .flex-container {
@@ -130,7 +138,7 @@
 }
 
 .song-title {
-    flex: 60%;
+    flex: 55%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -159,6 +167,11 @@
 
 .song-list-album-art {
     margin-right: 10px;
+}
+
+.song-options {
+    flex-basis: 5%;
+    text-align: right;
 }
 
 .playing {

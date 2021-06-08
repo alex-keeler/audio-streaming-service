@@ -2,19 +2,18 @@ from app import app
 from flask import Flask, render_template, redirect, url_for, flash, session, Response, request
 import PyWave
 from app.s3storage import create_presigned_url, upload_file, BUCKET_NAME
-from app.database import Database
-from app.forms import UploadSongForm
+from app.database import db
+from app.forms import UploadSongForm, AddSongToPlaylistForm
 from werkzeug.utils import secure_filename
 from mutagen.mp3 import MP3
 import os
+import json
 
 SAMPLES = 65536
 RATE = 44100
 BITS_PER_SAMPLE = 16
 CHANNELS = 2
 LENGTH = 15
-
-db = Database('audiouser', 'audiouser', 'audiostream')
 
 @app.route("/")
 @app.route("/index")
@@ -24,7 +23,10 @@ def index():
 
 @app.route("/playlists")
 def playlists():
-	return render_template("playlists.html")
+	playlist = db.get_playlist_by_id(1)
+	playlist_songs = db.get_playlist_songs_by_playlist_id_loaded(1)
+
+	return render_template("playlists.html", playlist=playlist, songs=playlist_songs)
 
 @app.route("/artists")
 def artists():
@@ -37,13 +39,35 @@ def albums():
 @app.route("/songs")
 def songs():
 	songs = db.get_all_songs_loaded()
+
 	return render_template("songs.html", songs=songs)
 
+# DEPRECATED
 @app.route("/upload-song")
 def upload_song():
 	song_form = UploadSongForm()
 
 	return render_template("file_upload_to_s3.html", form=song_form)
+
+@app.route("/add-song-to-playlist", methods=['get', 'post'])
+def add_song_to_playlist():
+	song_id = request.args.get('song_id')
+	print('song id: ' + str(song_id))
+	song = db.get_song_by_id_loaded(song_id)
+	form = AddSongToPlaylistForm(song_id=song_id)
+	msg = ""
+
+	if form.validate_on_submit():
+		song_id = form.song_id.data
+		playlist_id = form.playlist_id.data
+		duplicate = db.get_playlist_song_by_playlist_and_song(playlist_id, song_id)
+		if duplicate is None:
+			db.save_playlist_song(playlist_id, song_id, None, None)
+			msg = "Song added to playlist!"
+		else:
+			msg = "Song is already in playlist"
+
+	return render_template("add_song_to_playlist.html", form=form, song=song, msg=msg)
 
 @app.route('/upload', methods=['get', 'post'])
 def upload():
@@ -65,21 +89,6 @@ def upload():
 		msg = upload_file(BUCKET_NAME, song_filename, song[5] + ".mp3") # file uuid
 
 		os.remove(song_filename)
-
-	# if request.method == 'POST':
-	# 	img = request.files['file']
-	# 	if img:
-	# 		print(img)
-	# 		filename = secure_filename(img.filename)
-	# 		img.save(filename)
-
-	# 		msg = upload_file(BUCKET_NAME, filename, filename)
-	# 		# s3.upload_file(
-	# 		#     Bucket = BUCKET_NAME,
-	# 		#     Filename=filename,
-	# 		#     Key = filename
-	# 		# )
-	# 		# msg = "Upload Done ! "
 
 	return render_template("file_upload_to_s3.html", msg=msg, form=form)
 
@@ -175,7 +184,6 @@ def get_audio_source():
 
 	song_id = request.args.get('song_id')
 	song = db.get_song_by_id(song_id)
-	print(song)
 
 	if (song == None):
 		return ""
@@ -183,3 +191,22 @@ def get_audio_source():
 	filepath = song[5] + ".mp3"
 
 	return create_presigned_url(BUCKET_NAME, filepath)
+
+@app.route("/generate-playlist-queue-json")
+def get_playlist_queue_json():
+
+	playlist_id = request.args.get('playlist_id')
+	shuffle = (request.args.get('shuffle') == "true")
+	group_songs = True
+
+	queue = db.generate_playlist_queue(playlist_id, shuffle=shuffle, group_songs=group_songs)
+
+	json_str = json.dumps(queue, default=str)
+	return json_str
+
+@app.route("/get-all-songs-json")
+def get_all_songs_json():
+	songs = db.get_all_songs_loaded()
+
+	json_str = json.dumps(songs, default=str)
+	return json_str
