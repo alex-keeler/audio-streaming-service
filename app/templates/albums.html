@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% include 'player.html' %}
+
+{% block app_content %}
+
+    <h1 style="text-align: center">Albums</h1>
+    <br>
+    <ul class="album-list">
+        {% for album in albums %}
+            <li class="song-list-entry" id="album-id-{{ album[0] }}">
+                <div class="song-list-entry-content">
+                    <h4 onclick="window.location.href = '{{ url_for('songs', album_id=album[0]) }}'" class="song-title">{{ album[1] }}</h4>
+                    <span class="song-options">
+                        <span onclick="window.location.href = '{{ url_for('songs', album_id=album[0]) }}'" title="Album's Songs"><i class="fab fa-stripe-s"></i></span>
+                    </span>
+                    <span class="flex-break"></span>
+                    <span class="artist-title">{{ album[3] }}</span>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {% block player_content %}{% endblock %}
+
+{% endblock %}
+
+{% block app_scripts %}
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "/get-all-songs-json",
+            dataType: 'json',
+            success: function(result) {
+                window.songs = result;
+            },
+            error: function(result) {
+                console.error(result);
+            }
+        });
+    });
+
+    function startSong(id) {
+        if (window.songs) {
+            playSong(id, true);
+        }
+    }
+</script>
+
+{% block player_scripts %}{% endblock %}
+{% endblock %}

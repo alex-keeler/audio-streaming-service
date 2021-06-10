@@ -30,11 +30,15 @@ def playlists():
 
 @app.route("/artists")
 def artists():
-	return render_template("artists.html")
+	artists = db.get_all_artists()
+	
+	return render_template("artists.html", artists=artists)
 
 @app.route("/albums")
 def albums():
-	return render_template("albums.html")
+	albums = db.get_all_albums()
+
+	return render_template("albums.html", albums=albums)
 
 @app.route("/songs")
 def songs():

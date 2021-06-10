@@ -10,7 +10,7 @@ s3 = boto3.client('s3',
                     #aws_session_token='arn:aws:s3:::audio-upload-bucket-cs351'
                      )
 
-BUCKET_NAME='audio-upload-bucket-cs351'
+BUCKET_NAME='audio-test-1469'
 
 @app.route('/')
 def home():

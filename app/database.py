@@ -1,4 +1,5 @@
 import mysql.connector
+from app import app
 from app.util import calculate_time
 import random
 
@@ -150,7 +151,7 @@ class Database(object):
         query = (" SELECT a.* FROM album a " +
                     " WHERE a.id = {}").format(album_id)
 
-        cursor.exeute(query)
+        cursor.execute(query)
 
         results = []
 
@@ -183,6 +184,26 @@ class Database(object):
 
         return self.get_first_or_none(results)
 
+    def get_all_albums(self):
+        # 0=id, 1=name, 2=year_released, 3=artist_id, 4=cover_file_uuid
+
+        cnx, cursor = self.open_connection()
+
+        query = (" SELECT a.* FROM album a ")
+
+        cursor.execute(query)
+
+        results = []
+
+        for result in cursor:
+            results.append(result)
+
+        cursor.close()
+        cnx.close()
+
+        return tuple(results)
+
+    @app.route("/get_artist_by_id")
     def get_artist_by_id(self, artist_id):
         # 0=id, 1=name
 
@@ -202,6 +223,25 @@ class Database(object):
         cnx.close()
 
         return self.get_first_or_none(results)
+
+    def get_all_artists(self):
+        # 0=id, 1=artist_name
+
+        cnx, cursor = self.open_connection()
+
+        query = (" SELECT a.* FROM artist a ")
+
+        cursor.execute(query)
+
+        results = []
+
+        for result in cursor:
+            results.append(result)
+
+        cursor.close()
+        cnx.close()
+
+        return tuple(results)
 
     def save_album(self, album_name, year_released, artist_id):
 
