@@ -1,9 +1,9 @@
 from app import app
 from flask import Flask, render_template, redirect, url_for, flash, session, Response, request
 import PyWave
-from app.s3storage import create_presigned_url, upload_file, BUCKET_NAME
+from app.s3storage import create_presigned_url, upload_file, delete_file, BUCKET_NAME
 from app.database import db
-from app.forms import UploadSongForm, AddSongToPlaylistForm
+from app.forms import UploadSongForm, AddSongToPlaylistForm, CreatePlaylistForm
 from werkzeug.utils import secure_filename
 from mutagen.mp3 import MP3
 import os
@@ -23,28 +23,85 @@ def index():
 
 @app.route("/playlists")
 def playlists():
-	playlist = db.get_playlist_by_id(1)
-	playlist_songs = db.get_playlist_songs_by_playlist_id_loaded(1)
+	playlists = db.get_all_playlists()
 
-	return render_template("playlists.html", playlist=playlist, songs=playlist_songs)
+	return render_template("playlists.html", playlists=playlists)
+
+@app.route("/playlist")
+def playlist():
+	playlist_id = request.args.get('playlist_id')
+
+	playlist = db.get_playlist_by_id(playlist_id)
+	playlist_songs = db.get_playlist_songs_by_playlist_id_loaded(playlist_id)
+
+	return render_template("playlist.html", playlist=playlist, songs=playlist_songs)
+
+@app.route("/playlist/create", methods=['get', 'post'])
+def create_playlist():
+	form = CreatePlaylistForm()
+
+	if form.validate_on_submit():
+		playlist_name = form.playlist_name.data
+		duplicate = db.get_playlist_by_name(playlist_name)
+		if duplicate is None:
+			db.save_playlist(playlist_name, None)
+			flash("Playlist created!")
+			return redirect(url_for("playlists"))
+		else:
+			flash("A playlist with that name already exists!")
+
+	return render_template("create_playlist.html", form=form)
 
 @app.route("/artists")
 def artists():
 	artists = db.get_all_artists()
-	
+
 	return render_template("artists.html", artists=artists)
 
 @app.route("/albums")
 def albums():
-	albums = db.get_all_albums()
+	artist_id = request.args.get('artist_id')
+	artist_name = db.get_artist_by_id(artist_id)[1] if artist_id is not None else None
 
-	return render_template("albums.html", albums=albums)
+	if artist_id is not None:
+		albums = db.get_albums_by_artist_id_loaded(artist_id)
+	else:
+		albums = db.get_all_albums_loaded()
+
+	return render_template("albums.html", albums=albums, artist_name=artist_name)
 
 @app.route("/songs")
 def songs():
-	songs = db.get_all_songs_loaded()
+	album_id = request.args.get('album_id')
+	album_name = db.get_album_by_id(album_id)[1] if album_id is not None else None
 
-	return render_template("songs.html", songs=songs)
+	artist_id = request.args.get('artist_id')
+	artist_name = db.get_artist_by_id(artist_id)[1] if artist_id is not None else None
+
+	if album_id is not None:
+		songs = db.get_songs_by_album_id_loaded(album_id)
+	elif artist_id is not None:
+		songs = db.get_songs_by_artist_id_loaded(artist_id)
+	else:
+		songs = db.get_all_songs_loaded()
+
+	return render_template("songs.html", songs=songs, album_id=album_id, album_name=album_name, artist_id=artist_id, artist_name=artist_name)
+
+@app.route("/delete-song")
+def delete_song():
+	song_id = request.args.get('song_id')
+
+	# only used for redirect back to songs page
+	album_id = request.args.get('album_id')
+	artist_id = request.args.get('artist_id')
+
+	song_file_uuid = db.get_song_by_id(song_id)[5]
+
+	db.delete_song(song_id)
+	delete_file(BUCKET_NAME, song_file_uuid + ".mp3")
+	flash("Song successfully deleted!")
+
+	return redirect(url_for("songs", album_id=album_id, artist_id=artist_id))
 
 # DEPRECATED
 @app.route("/upload-song")
@@ -56,10 +113,9 @@ def upload_song():
 @app.route("/add-song-to-playlist", methods=['get', 'post'])
 def add_song_to_playlist():
 	song_id = request.args.get('song_id')
-	print('song id: ' + str(song_id))
 	song = db.get_song_by_id_loaded(song_id)
 	form = AddSongToPlaylistForm(song_id=song_id)
-	msg = ""
+	form.playlist_id.choices = [(playlist[0], playlist[1]) for playlist in db.get_all_playlists()]
 
 	if form.validate_on_submit():
 		song_id = form.song_id.data
@@ -67,17 +123,38 @@ def add_song_to_playlist():
 		duplicate = db.get_playlist_song_by_playlist_and_song(playlist_id, song_id)
 		if duplicate is None:
 			db.save_playlist_song(playlist_id, song_id, None, None)
-			msg = "Song added to playlist!"
+			flash("Song successfully added to playlist!")
+			return redirect(url_for("songs"))
 		else:
-			msg = "Song is already in playlist"
+			flash("Song is already in playlist!")
 
-	return render_template("add_song_to_playlist.html", form=form, song=song, msg=msg)
+	return render_template("add_song_to_playlist.html", form=form, song=song)
+
+@app.route("/remove-song-from-playlist")
+def delete_playlist_song():
+	playlist_song_id = request.args.get('playlist_song_id')
+
+	playlist_id = db.get_playlist_song_by_id(playlist_song_id)[6]
+
+	db.delete_playlist_song(playlist_song_id)
+	flash("Song removed from playlist!")
+
+	return redirect(url_for("playlist", playlist_id=playlist_id))
+
+@app.route("/delete-playlist")
+def delete_playlist():
+	playlist_id = request.args.get('playlist_id')
+
+	db.delete_playlist(playlist_id)
+	flash("Playlist deleted!")
+
+	return redirect(url_for("playlists"))
+
 
 @app.route('/upload', methods=['get', 'post'])
 def upload():
 
 	form = UploadSongForm()
-	msg = ""
 
 	if form.validate_on_submit():
 		song_file = request.files[form.song_file.name]
@@ -90,11 +167,11 @@ def upload():
 		song_id = db.save_song(form.song_name.data, song_length, form.track_number.data, form.album_name.data, form.album_release_year.data, form.artist_name.data)
 		song = db.get_song_by_id(song_id)
 
-		msg = upload_file(BUCKET_NAME, song_filename, song[5] + ".mp3") # file uuid
+		flash(upload_file(BUCKET_NAME, song_filename, song[5] + ".mp3")) # file uuid
 
 		os.remove(song_filename)
 
-	return render_template("file_upload_to_s3.html", msg=msg, form=form)
+	return render_template("file_upload_to_s3.html", form=form)
 
 
 # DEPRECATED

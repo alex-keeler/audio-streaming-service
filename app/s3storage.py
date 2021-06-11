@@ -2,7 +2,7 @@ import logging
 import boto3
 from botocore.exceptions import ClientError
 
-BUCKET_NAME = "audio-test-1469"
+BUCKET_NAME = "audio-test-1468"
 
 def create_presigned_url(BUCKET_NAME, object_name, expiration=3600):
     """Generate a presigned URL to share an S3 object
@@ -35,4 +35,8 @@ def upload_file(BUCKET_NAME, filename, object_name):
     # Filename=filename,
     # Key = filename,
 
-    return "Upload Done!"
+    return "Upload complete!"
+
+def delete_file(bucket_name, object_name):
+    s3_client = boto3.client('s3')
+    s3_client.delete_object(Bucket=bucket_name, Key=object_name)

@@ -7,7 +7,7 @@ from flask import flash
 from app.database import db
 
 class UploadSongForm(FlaskForm):
-	song_file = FileField("Song File: ", validators=[FileRequired()])
+	song_file = FileField("Song File (.mp3): ", validators=[FileRequired()])
 	song_name = StringField("Song Name: ", validators=[DataRequired()])
 	artist_name = StringField("Artist Name: ", validators=[DataRequired()])
 	album_name = StringField("Album Name: ")
@@ -17,12 +17,9 @@ class UploadSongForm(FlaskForm):
 
 class AddSongToPlaylistForm(FlaskForm):
 	song_id = HiddenField()
+	playlist_id = SelectField("Playlist: ", validators=[DataRequired()])
+	submit = SubmitField("Submit")
 
-	# Playlist ID
-	playlists = db.get_all_playlists()
-	choices = []
-	for playlist in playlists:
-		choices.append((playlist[0], playlist[1])) # id, name
-	playlist_id = SelectField("Playlist: ", choices=choices, validators=[DataRequired()])
-
+class CreatePlaylistForm(FlaskForm):
+	playlist_name = StringField("Playlist Name: ", validators=[DataRequired()])
 	submit = SubmitField("Submit")

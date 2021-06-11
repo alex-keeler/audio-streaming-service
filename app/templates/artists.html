@@ -1,18 +1,17 @@
 {% extends 'base.html' %}
-{% include 'player.html' %}
 
 {% block app_content %}
 
-    <h1 style="text-align: center">Artists</h1>
+    <h1 class="page-title">Artists</h1>
     <br>
-    <ul class="artist-list">
+    <ul class="song-list">
         {% for artist in artists %}
-            <li class="song-list-entry" id="artist-id-{{ artist[0] }}">
+            <li class="song-list-entry" id="artist-id-{{ artist[0] }}" onclick="window.location.href = '{{ url_for('songs', artist_id=artist[0]) }}'">
                 <div class="song-list-entry-content">
-                    <h4 onclick="window.location.href = '{{ url_for('songs', artist_id=artist[0]) }}'" class="song-title">{{ artist[1] }}</h4>
+                    <h4 class="song-title">{{ artist[1] }}</h4>
                     <span class="song-options">
-                        <span onclick="window.location.href = '{{ url_for('albums', artist_id=artist[0]) }}'" title="Artist's Albums"><i class="fab fa-atlassian"></i></span>
-                        <span onclick="window.location.href = '{{ url_for('songs', artist_id=artist[0]) }}'" title="Artist's Songs"><i class="fab fa-stripe-s"></i></span>
+                        <span onclick="event.stopPropagation(); window.location.href = '{{ url_for('albums', artist_id=artist[0]) }}'" title="Artist's Albums"><i class="fab fa-atlassian"></i></span>
+                        <span onclick="event.stopPropagation(); window.location.href = '{{ url_for('songs', artist_id=artist[0]) }}'" title="Artist's Songs"><i class="fab fa-stripe-s"></i></span>
                     </span>
                     <span class="flex-break"></span>
                 </div>
@@ -22,29 +21,4 @@
 
     {% block player_content %}{% endblock %}
 
-{% endblock %}
-
-{% block app_scripts %}
-<script>
-    $(document).ready(function() {
-        $.ajax({
-            url: "/get-all-songs-json",
-            dataType: 'json',
-            success: function(result) {
-                window.songs = result;
-            },
-            error: function(result) {
-                console.error(result);
-            }
-        });
-    });
-
-    function startSong(id) {
-        if (window.songs) {
-            playSong(id, true);
-        }
-    }
-</script>
-
-{% block player_scripts %}{% endblock %}
 {% endblock %}

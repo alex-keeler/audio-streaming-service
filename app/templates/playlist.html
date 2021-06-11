@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% include 'player.html' %}
+
+{% block app_content %}
+
+    <h1 style="text-align: center">{{ playlist[1] }}</h1>
+    <hr>
+    <div class="button-container">
+	    <button class="button button-green" onclick="startPlaylist(false)"><i class="fas fa-play"></i>&nbsp;Play</button>
+	    <button class="button" onclick="startPlaylist(true)"><i class="fas fa-random"></i>&nbsp;Shuffle</button>
+	   	<button class="button" onclick="window.location.href='{{ url_for('songs') }}' ">Songs Page</button>
+	</div>
+    <ul class="song-list">
+        {% for song in songs %}
+            <li class="song-list-entry" id="audio-{{ song[7] }}" onclick="startPlaylist(false, '{{ song[7] }}')">
+                <!-- <img class="song-list-album-art" width="50" height="50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Polygondwanaland.jpg/440px-Polygondwanaland.jpg"></img> -->
+                <div class="song-list-entry-content">
+                    <span class="song-title">{{ song[8] }}</span>
+                    <span class="playlist-song-date-added">Added: {{ song[1].strftime('%Y-%m-%d') }}</span>
+                    <span class="song-duration">{{ song[9] }}</span>
+                    <span class="playlist-options">
+						<span onclick="event.stopPropagation(); if (confirm('Are you sure you want to remove this song?')) { window.location.href = '{{ url_for('delete_playlist_song', playlist_song_id=song[0]) }}' } " title="Remove Song from Playlist"><i class="fas fa-minus"></i></span>
+					</span>
+                    <span class="flex-break"></span>
+                    <span class="artist-title">{{ song[12] }}</span>
+                </div>
+            </li>
+        {% endfor %}
+        {% if not songs|length %}
+        	<div class="tip-message">No songs in playlist</div>
+        {% endif %}
+    </ul>
+
+    {% block player_content %}{% endblock %}
+
+{% endblock %}
+
+{% block app_scripts %}
+    <script>
+        function startPlaylist(shuffle, id) {
+            $.ajax({
+                url: "/generate-playlist-queue-json?playlist_id={{ playlist[0] }}&shuffle=" + shuffle,
+                dataType: 'json',
+                success: function(result) {
+                    window.songs = result;
+                    if (id) {
+                        playSong(id, true);
+                    } else if (window.songs.length > 0) {
+                        playSong(window.songs[0][0], true);
+                    }
+                },
+                error: function(result) {
+                    console.error(result);
+                }
+            });
+        }
+    </script>
+
+    {% block player_scripts %}{% endblock %}
+{% endblock %}

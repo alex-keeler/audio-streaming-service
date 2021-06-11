@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block app_content %}
+
+    <h1 style="text-align: center">Playlists</h1>
+    <hr>
+    <div class="button-container">
+	    <button class="button button-green" onclick="window.location.href='{{ url_for('create_playlist') }}' ">
+	    	<i class="fas fa-plus"></i>&nbsp;Create New Playlist
+	    </button>
+	</div>
+    <ul class="playlist-list">
+		{% for playlist in playlists %}
+		    <li class="playlist-list-entry" id="audio-{{ playlist[0] }}" onclick="window.location.href = '{{ url_for('playlist', playlist_id=playlist[0]) }}' ">
+		    	<div class="playlist-list-entry-content">
+					<span class="playlist-title">{{ playlist[1] }}</span>
+					<span class="playlist-creation-date">Created: {{ playlist[3].strftime('%Y-%m-%d') }}</span>
+					<span class="playlist-options">
+						<span onclick="event.stopPropagation(); if (confirm('Are you sure you want to delete this playlist?')) { window.location.href = '{{ url_for('delete_playlist', playlist_id=playlist[0]) }}' } " title="Delete Playlist"><i class="fas fa-trash"></i></span>
+					</span>
+		    	</div>
+		    </li>
+		{% endfor %}
+	</ul>
+
+{% endblock %}

@@ -3,7 +3,13 @@
 
 {% block app_content %}
 
-    <h1 style="text-align: center">Songs</h1>
+	{% if album_name %}
+        <h1 class="page-title">Songs - {{ album_name }}</h1>
+	{% elif artist_name %}
+        <h1 class="page-title">Songs - {{ artist_name }}</h1>
+    {% else %}
+        <h1 class="page-title">Songs</h1>
+    {% endif %}
     <br>
     <ul class="song-list">
 		{% for song in songs %}
@@ -14,7 +20,9 @@
 					<span class="album-title">{{ song[6] }}</span>
 					<span class="song-duration">{{ song[2] }}</span>
 					<span class="song-options">
-						<span onclick="window.location.href = '{{ url_for('add_song_to_playlist', song_id=song[0]) }}'" title="Add to Playlist"><i class="fas fa-plus"></i></span>
+						<span onclick="event.stopPropagation(); window.location.href = '{{ url_for('add_song_to_playlist', song_id=song[0]) }}'" title="Add to Playlist"><i class="fas fa-plus"></i></span>
+						&nbsp;
+						<span onclick="event.stopPropagation(); if (confirm('Are you sure you want to delete this song?')) { window.location.href = '{{ url_for('delete_song', song_id=song[0], album_id=album_id, artist_id=artist_id) }}' } " title="Delete Song"><i class="fas fa-trash"></i></span>
 					</span>
 					<span class="flex-break"></span>
 					<span class="artist-title">{{ song[7] }}</span>

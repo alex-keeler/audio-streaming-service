@@ -67,6 +67,25 @@
     height: 50px;
 }
 
+.button-container {
+    margin: 10px;
+    text-align: center;
+}
+
+.button {
+    background-color: #34a1eb;
+    color: white;
+    border: 0px;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px 20px;
+    font-weight: 700;
+}
+
+.button-green {
+    background-color: #0DB14B;
+}
+
 .audio-player-container {
     position: fixed;
     bottom: 0;
@@ -105,14 +124,14 @@
     cursor: default;
 }
 
-.song-list {
+.song-list, .playlist-list {
     border-top: 1px solid gray;
     padding: 0;
     margin: auto;
     width: 90%;
 }
 
-.song-list-entry {
+.song-list-entry, .playlist-list-entry {
     border-bottom: 1px solid gray;
     padding: 12px 24px;
     cursor: pointer;
@@ -121,12 +140,12 @@
     align-items: center;
 }
 
-.song-list-entry:hover {
+.song-list-entry:hover, .playlist-list-entry:hover {
     cursor: pointer;
     background-color: lightgray;
 }
 
-.song-list-entry-content {
+.song-list-entry-content, .playlist-list-entry-content {
     display: inline-flex;
     flex-wrap: wrap;
     flex-basis: 100%;
@@ -144,7 +163,7 @@
     text-overflow: ellipsis;
 }
 
-.album-title {
+.album-title, .playlist-song-date-added {
     flex-basis: 35%;
     overflow: hidden;
     white-space: nowrap;
@@ -169,7 +188,7 @@
     margin-right: 10px;
 }
 
-.song-options {
+.song-options, .playlist-options {
     flex-basis: 5%;
     text-align: right;
 }
@@ -188,4 +207,31 @@
 
 .playing .artist-title {
     color: #E5E7E9;
+}
+
+.playlist-title {
+    font-size: 14pt;
+    flex-basis: 70%;
+}
+
+.playlist-creation-date {
+    text-align: right;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-basis: 25%;
+}
+
+.tip-message {
+    text-align: center;
+    color: gray;
+    font-style: italic;
+    margin: 10px;
+}
+
+.album-page-title {
+    flex-basis: 80%;
+}
+
+.album-release-year {
+    flex-basis: 15%;
 }
