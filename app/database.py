@@ -5,27 +5,25 @@ import random
 import os
 import boto3
 
-# ENDPOINT="mysqldb.123456789012.us-east-1.rds.amazonaws.com"
-# PORT="3306"
-# USR="jane_doe"
-# REGION="us-east-1"
-# os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
+ENDPOINT="rds-endpoint"
+PORT="3306"
+DBNAME="audiostream"
+USR="audiouser"
+PASSWORD="audiouser"
+REGION="us-east-1"
+SSL_CA = "/path/to/secret.pem"
+os.environ['LIBMYSQL_ENABLE_CLEARTEXT_PLUGIN'] = '1'
 
 class Database(object):
-    def __init__(self, username_str, password_str, db_name_str, host_str='localhost'):
-        """
-        Creates a new MySQL database with the given username, password, database name, and host
-        (optional).
-        username_str: The username used to access the database (str)
-        password_str: The password used to access the database (str)
-        db_name_str: The name of the database being accessed (str)
-        host_str: The IP of the host (defaults to localhost if left empty) (str)
-        """
+    def __init__(self, rds=False, host="localhost", user="audiouser", password="audiouser", port=3306, database="audiostream", ssl_ca=None):
 
-        self.username = username_str
-        self.password = password_str
-        self.db_name = db_name_str
-        self.host = host_str
+        self.rds = rds
+        self.host = host
+        self.user = user
+        self.password = password
+        self.port = port
+        self.database = database
+        self.ssl_ca = ssl_ca
 
     def open_connection(self):
         """
@@ -35,8 +33,8 @@ class Database(object):
         Note: Remember to close the cursor and database connection when you are done with them!
         """
 
-        cnx = mysql.connector.connect(username=self.username, password=self.password,
-            database=self.db_name, host=self.host)
+        cnx = mysql.connector.connect(username=self.user, password=self.password,
+            database=self.database, host=self.host)
 
         return cnx, cnx.cursor()
 
@@ -790,4 +788,8 @@ class Database(object):
 
 # token = client.generate_db_auth_token(DBHostname=ENDPOINT, Port=PORT, DBUsername=USR, Region=REGION)
 
-db = Database('audiouser', 'audiouser', 'audiostream')
+# Uncomment for RDS database:
+# db = Database(rds=True, host=ENDPOINT, user=USR, password=PASSWORD, port=PORT, database=DBNAME, ssl_ca=SSL_CA)
+
+# Local database
+db = Database()
